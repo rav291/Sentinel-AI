@@ -3,8 +3,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
-
-import router from './routes';
+import UserRouter from './routes/user-routes';
 
 dotenv.config();
 
@@ -18,7 +17,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
-app.use('/api', router);
+app.use('/api', UserRouter);
 
 // Root Route
 app.get('/', (req: Request, res: Response): void => {
