@@ -3,8 +3,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
-import UserRouter from './routes/user-routes';
-
+import userRoutes from './routes/userRoutes';
 dotenv.config();
 
 const app: Application = express();
@@ -17,7 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
-app.use('/api', UserRouter);
+app.use('/users', userRoutes);
 
 // Root Route
 app.get('/', (req: Request, res: Response): void => {

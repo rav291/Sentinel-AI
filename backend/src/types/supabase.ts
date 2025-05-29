@@ -8,17 +8,3 @@ export type User = {
   name: string
   role: string
 }
-
-// Then use it
-// import { supabase } from './supabaseClient'
-// import { User } from './types/supabase'
-
-// const { data, error } = await supabase
-//   .from<User>('users')
-//   .select('*')
-
-// if (error) {
-//   console.error('Supabase Error:', error)
-// } else {
-//   console.log('Users:', data)
-// }
