@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import userRoutes from './routes/userRoutes';
+import { errorHandler } from './middlewares/errorHandler';
 dotenv.config();
 
 const app: Application = express();
@@ -22,6 +23,8 @@ app.use('/users', userRoutes);
 app.get('/', (req: Request, res: Response): void => {
   res.send('Welcome to Express Backend');
 });
+
+app.use(errorHandler);
 
 app.listen(PORT, (): void => {
   console.log(`Server running on http://localhost:${PORT}`);
