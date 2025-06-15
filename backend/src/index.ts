@@ -3,9 +3,8 @@ import cors from 'cors';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
-
-import router from './routes';
-
+import userRoutes from './routes/userRoutes';
+import { errorHandler } from './middlewares/errorHandler';
 dotenv.config();
 
 const app: Application = express();
@@ -18,12 +17,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
-app.use('/api', router);
+app.use('/users', userRoutes);
 
 // Root Route
 app.get('/', (req: Request, res: Response): void => {
   res.send('Welcome to Express Backend');
 });
+
+app.use(errorHandler);
 
 app.listen(PORT, (): void => {
   console.log(`Server running on http://localhost:${PORT}`);
