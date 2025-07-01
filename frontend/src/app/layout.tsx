@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { Sora } from 'next/font/google'
+import { Providers } from "./providers";
 
 const sora = Sora({
   subsets: ['latin'],
@@ -21,10 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${sora.variable} font-sans antialiased`}>
-      <body 
-      className="font-sora"
+      <body
+        className="font-sora"
       >
-        {children}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );

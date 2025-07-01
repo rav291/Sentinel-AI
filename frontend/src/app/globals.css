@@ -128,48 +128,16 @@
   font-family: var(--font-sora);
 }
 
-/* @keyframes float-up-down {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-150px);
-  }
-} */
-
-@keyframes converge-top-left {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(50vw, 50vh);
-  }
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
 }
-
-@keyframes converge-top-right {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(-50vw, 50vh);
-  }
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
 }
-
-@keyframes converge-bottom-left {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(50vw, -50vh);
-  }
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 105, 180, 0.3); /* light pink thumb */
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
 }
-
-@keyframes converge-bottom-right {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(-50vw, -50vh);
-  }
-}
-
