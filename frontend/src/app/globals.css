@@ -141,3 +141,15 @@
   border: 2px solid transparent;
   background-clip: content-box;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+[data-state="open"] button[aria-label="Close"] {
+  display: none;
+}

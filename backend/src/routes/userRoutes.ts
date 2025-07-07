@@ -23,16 +23,16 @@ export default router;
 //         Authorization: `${process.env.DEEPSEEK_R1_ZERO_APIKEY}`,
 //         'Content-Type': 'application/json',
 //       },
-//       body: JSON.stringify({
-//         model: 'deepseek/deepseek-r1-zero:free',
-//         messages: [
-//           {
-//             role: 'user',
-//             content: 'What is the one thing that you can do to make the world a better place?',
-//           },
-//         ],
-//         stream: false, // Set true only when you're handling streaming properly
-//       }),
+      // body: JSON.stringify({
+      //   model: 'deepseek/deepseek-r1-zero:free',
+      //   messages: [
+      //     {
+      //       role: 'user',
+      //       content: 'What is the one thing that you can do to make the world a better place?',
+      //     },
+      //   ],
+      //   stream: false, // Set true only when you're handling streaming properly
+      // }),
 //     });
 
 //     const data = await response.json();
